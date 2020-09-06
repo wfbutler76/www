@@ -1,16 +1,183 @@
 <!DOCTYPE html>
+<!-- fireandflames.com -->
 <html>
 <head>
-<title>William Butler Tech</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>3 Column Layout</title>
+	<style type="text/css">
+
+		/* Layout */
+		body {
+			min-width: 630px;
+		}
+
+		#container {
+			padding-left: 200px;
+			padding-right: 190px;
+		}
+		
+		#container .column {
+			position: relative;
+			float: left;
+		}
+		
+		#center {
+			padding: 10px 20px;
+			width: 100%;
+		}
+		
+		#left {
+			width: 180px;
+			padding: 0 10px;
+			right: 240px;
+			margin-left: -100%;
+		}
+		
+		#right {
+			width: 130px;
+			padding: 0 10px;
+			margin-right: -100%;
+		}
+		
+		#footer {
+			clear: both;
+		}
+		
+		/* IE hack */
+		* html #left {
+			left: 150px;
+		}
+
+		/* Make the columns the same height as each other */
+		#container {
+			overflow: hidden;
+		}
+
+		#container .column {
+			padding-bottom: 1001em;
+			margin-bottom: -1000em;
+		}
+
+		/* Fix for the footer */
+		* html body {
+			overflow: hidden;
+		}
+		
+		* html #footer-wrapper {
+			float: left;
+			position: relative;
+			width: 100%;
+			padding-bottom: 10010px;
+			margin-bottom: -10000px;
+			background: #fff;
+		}
+
+		/* Aesthetics */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family:Sans-serif;
+			line-height: 1.5em;
+		}
+		
+		p {
+			color: #555;
+		}
+
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		nav ul a {
+			color: white;
+			text-decoration: none;
+		}
+
+		#header, #footer {
+			font-size: large;
+			padding: 0.3em;
+			background: #E74C3C;
+		}
+
+		#left {
+			background: #E74C3C;
+		}
+		
+		#right {
+			background: #E74C3C;
+		}
+
+		#center {
+			background: #99A3A4;
+		}
+
+		#container .column {
+			padding-top: 1em;
+		}
+		
+	</style>
+	
+	<script type="text/javascript">
+		/* =============================
+		This script generates sample text for the body content. 
+		You can remove this script and any reference to it. 
+		 ============================= */
+		var bodyText=["The smaller your reality, the more convinced you are that you know everything.", "If the facts don't fit the theory, change the facts.", "The past has no power over the present moment.", "This, too, will pass.", "</p><p>You will not be punished for your anger, you will be punished by your anger.", "Peace comes from within. Do not seek it without.", "<h3>Heading</h3><p>The most important moment of your life is now. The most important person in your life is the one you are with now, and the most important activity in your life is the one you are involved with now."]
+		function generateText(sentenceCount){
+			for (var i=0; i<sentenceCount; i++)
+			document.write(bodyText[Math.floor(Math.random()*7)]+" ")
+		}
+	</script>	
 </head>
+
 <body>
 
-<h1><p>test</p></h1>
-<p>test</p>
-<div class="row">
-  <div class="column"> <p>test</p> </div>
-  <div class="column"> <p>test</p> </div>
-  <div class="column"> <p>test</p> </div>
-</div>
+	<header id="header"><center><p>fireandflames.com</p></center></header>
+
+	<div id="container">
+
+		<main id="center" class="column">
+			<article>
+			
+				<h1>Heading</h1>
+				<p><script>generateText(50)</script></p>
+			
+			</article>								
+		</main>
+
+		<nav id="left" class="column">
+			<h3>Menu</h3>
+			<ul>
+				<li><a href="/index.html" style="color:gold">Home </a></li>
+				<li><a href="/about.html" style="color:gold">About</a></li>
+				<li><a href="/addons.html" style="color:gold">Addons</a></li>
+				<li><a href="/macros.html" style="color:gold">macros</a></li>
+				<li><a href="/contact.html" style="color:gold">Contact</a></li>
+			</ul>
+			<h3>WoW resouces</h3>
+			<ul>
+				<li><a href="https://www.wowhead.com/" target="_blank" style="color:gold">wow Head</a></li>
+				<li><a href="https://www.icy-veins.com/" target="_blank" style="color:gold">icy Veins</a></li>
+				<li><a href="https://www.askmrrobot.com/" target="_blank" style="color:gold">Ask mr. Robot</a></li>
+				<li><a href="https://www.raidbots.com/" target="_blank" style="color:gold">raid bots</a></li>
+				<li><a href="https://www.twitch.com/" target="_blank" style="color:gold">Twitch</a></li>
+			</ul>
+
+		</nav>
+
+		<div id="right" class="column">
+			<h3>Wow expansions</h3>
+			<p><script>generateText(1)</script></p>
+		</div>
+
+	</div>
+
+	<div id="footer-wrapper">
+		<footer id="footer"><center><p>fireandflames.com</p></center>,</footer>
+	</div>
+
 </body>
+
 </html>
